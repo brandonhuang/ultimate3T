@@ -9,10 +9,16 @@ class TicTacToe {
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0, 0]]
-    }
+      [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+    this.turn = 0;
+  }
   getOne() {
     return this.metaboard
+  }
+  getTurn() {
+      this.turn = (this.turn === 0 ? 1 : 0)
+    return this.turn
   }
   delete() {
     delete this.metaboard
@@ -23,7 +29,8 @@ var tic = new TicTacToe()
 
 console.log(tic.getOne())
 console.log(tic.delete());
-console.log(tic.getOne());
+console.log(tic.getTurn());
+console.log(tic.getTurn());
 
 //  let blank = Array.from('000000000').map(Number);
   // this.move = function() {
